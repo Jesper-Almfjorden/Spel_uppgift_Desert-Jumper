@@ -97,8 +97,8 @@ public class ScrollingScript : MonoBehaviour
                 // Check if the child is already (partly) before the camera.
                 // We test the position first because the IsVisibleForm
                 // method is a bit heavier to execute.
-                if (firstChild.transform.position.y <
-                    Camera.main.transform.position.y)
+                if (firstChild.transform.position.x <
+                    Camera.main.transform.position.x)
                 {
                     // If the child is already on the left of the camera,
                     // we test if it´s completely outside and needs to be
@@ -118,7 +118,7 @@ public class ScrollingScript : MonoBehaviour
                         // the last child.
                         // Note: Only work for horizontal scrolling currently.
                         firstChild.transform.position = new
-                        Vector3(lastPosition.x, firstChild.transform.position.y + lastSize.y * 2,
+                        Vector3(lastPosition.x + lastSize.x, firstChild.transform.position.y,
                                 firstChild.transform.position.z);
 
                         // Set the recycled child to the last position
